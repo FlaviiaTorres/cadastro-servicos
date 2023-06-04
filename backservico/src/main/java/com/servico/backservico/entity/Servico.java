@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -22,10 +20,8 @@ public class Servico {
     
     private String nomeCliente;
 
-    @Temporal(TemporalType.DATE)
     private Date dataInicio;
 
-    @Temporal(TemporalType.DATE)
     private Date dataTermino;
 
     private String descricaoServico;
@@ -34,7 +30,6 @@ public class Servico {
 
     private Double valorPago;
 
-    @Temporal(TemporalType.DATE)
     private Date dataPagamento;
 
     private String status; 

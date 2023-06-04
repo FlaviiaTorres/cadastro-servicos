@@ -42,6 +42,12 @@ public class ServicoService {
         return servicoRepository.saveAndFlush(servico);
     }
 
+    public void cancelarServico(Long id){
+        Servico servico = servicoRepository.findById(id).get();
+        servico.setStatus("cancelado");
+        servicoRepository.save(servico);
+    }
+
     public void excluir (Long id){
         Servico servico = servicoRepository.findById(id).get();
         servicoRepository.delete(servico);
