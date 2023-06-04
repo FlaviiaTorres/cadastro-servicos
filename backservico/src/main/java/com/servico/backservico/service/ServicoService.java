@@ -18,6 +18,13 @@ public class ServicoService {
         return servicoRepository.findAll();
     }
 
+    public List<Servico> buscaServicosPagamentoPendente(){
+        return servicoRepository.buscaServicosPagamentoPendente();
+    }
+    public List<Servico> buscaServicosCancelados(){
+        return servicoRepository.buscaServicosCancelados();
+    }
+
     public Servico inserir(Servico servico){
         if(servico.getValorPago()==null || servico.getValorPago()==0 || servico.getDataPagamento()==null){
             servico.setStatus("pendente");
