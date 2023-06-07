@@ -9,7 +9,7 @@ import com.servico.backservico.entity.Servico;
 
 public interface ServicoRepository extends JpaRepository<Servico, Long>{
     
-    @Query("select s from Servico s where s.valorPago is null or s.valorPago=0")
+    @Query("select s from Servico s where (s.valorPago is null or s.valorPago=0) and s.status!='cancelado'")
     List<Servico> buscaServicosPagamentoPendente();
 
     @Query("select s from Servico s where s.status = 'cancelado'")

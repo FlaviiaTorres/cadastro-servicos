@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -20,8 +24,10 @@ public class Servico {
     
     private String nomeCliente;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataInicio;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataTermino;
 
     private String descricaoServico;
@@ -30,6 +36,7 @@ public class Servico {
 
     private Double valorPago;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataPagamento;
 
     private String status; 
